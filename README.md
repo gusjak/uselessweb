@@ -1,6 +1,6 @@
 # Useless Website
 
-<img src="https://media.giphy.com/media/lcjWzvc9po5Og6eV4V/giphy.gif" width="30%">
+<img src="https://thumbs.gfycat.com/AthleticFairEider-size_restricted.gif" width="45%">
 
 ## Assignment
 
