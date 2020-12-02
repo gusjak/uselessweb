@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/public/fonts/Poppins-Bold.woff2') format('woff2'), url('/public/fonts/Poppins-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Poppins';
+  text-transform: uppercase;
+  color: #0f0f0f;
+  font-size: 4.6rem;
+  letter-spacing: 0.5rem;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(300px) scale(0.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+audio {
+  display: none;
+}
