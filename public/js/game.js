@@ -1,4 +1,5 @@
 const img = document.querySelector('img');
+const returnButton = document.querySelector('.return');
 const popSound = new Audio();
 popSound.src = '/public/sfx/pop.ogg';
 popSound.preload = 'auto';
@@ -22,4 +23,8 @@ let counter = document.querySelector('.imgBtn'),
 counter.addEventListener('click', function () {
   count += 1;
   clickCounter.innerHTML = 'You have clicked me' + '  ' + count + '  ' + 'times!';
+});
+
+returnButton.addEventListener('click', () => {
+  window.location.replace('index.html');
 });
