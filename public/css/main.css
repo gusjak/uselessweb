@@ -24,6 +24,15 @@ body {
   flex-direction: column;
 }
 
+.container .revealed {
+  display: block;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 h1 {
   text-transform: uppercase;
   color: #0f0f0f;
@@ -39,6 +48,15 @@ h2 {
   letter-spacing: 0.5rem;
   padding-bottom: 5rem;
   animation: fadeIn 1.5s ease forwards;
+}
+
+button {
+  animation: fadeIn 3s ease forwards;
+}
+
+button.return {
+  margin-bottom: 15%;
+  animation: fadeIn 4s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -60,10 +78,7 @@ img {
   height: 60%;
   margin: 0 auto;
   cursor: pointer;
-}
-
-.imgBtn {
-  margin-top: 4rem;
+  animation: fadeIn 4s ease forwards;
 }
 
 @media screen and (min-width: 768px) {

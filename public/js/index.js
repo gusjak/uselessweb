@@ -7,7 +7,7 @@ buttons.forEach((button) => {
     if (button.className === 'accept') {
       h1.innerHTML = 'Awesome!';
       h2.innerHTML = 'You are being redirected...';
-      setInterval(function () {
+      setInterval(() => {
         window.location.replace('game.html');
       }, 1500);
     }
@@ -18,16 +18,16 @@ buttons.forEach((button) => {
       h2.innerHTML = 'Terminating window in 3 seconds.';
 
       document.body.style.backgroundColor = 'black';
-      setInterval(function () {
+      setInterval(() => {
         window.close();
       }, 3000);
     }
     if (button.className === 'party') {
-      h1.innerHTML = 'Party Mode Iniated!';
+      h1.innerHTML = 'Party Mode Initiated!';
       h2.innerHTML = 'Scroll up and down to party.';
 
       if (window.innerWidth > 414) {
-        window.addEventListener('wheel', function (event) {
+        window.addEventListener('wheel', (event) => {
           if (event.deltaY < 0) {
             console.log('scrolling up');
             document.body.style.backgroundColor = 'red';
@@ -37,13 +37,13 @@ buttons.forEach((button) => {
           }
         });
       } else {
-        h1.innerHTML = 'Party Mode Iniated!';
+        h1.innerHTML = 'Party Mode Initiated!';
         h2.innerHTML = 'Tap screen to party.';
-        window.addEventListener('touchstart', function (event) {
+        window.addEventListener('touchstart', (event) => {
           console.log('finger down');
           document.body.style.backgroundColor = 'red';
         });
-        window.addEventListener('touchend', function (event) {
+        window.addEventListener('touchend', (event) => {
           console.log('finger up');
           document.body.style.backgroundColor = 'blue';
         });
