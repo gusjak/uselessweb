@@ -4,13 +4,13 @@ const popSound = new Audio();
 popSound.src = '/public/sfx/pop.ogg';
 popSound.preload = 'auto';
 
-img.addEventListener('click', function () {
-  if (this.classList.contains('changed')) {
-    this.src = '/public/img/closed.png';
-    this.className = '';
+img.addEventListener('click', () => {
+  if (img.classList.contains('changed')) {
+    img.src = '/public/img/closed.png';
+    img.className = '';
   } else {
-    this.className = 'changed';
-    this.src = '/public/img/opened.png';
+    img.className = 'changed';
+    img.src = '/public/img/opened.png';
   }
   popSound.play();
 });
