@@ -22,15 +22,15 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.container .revealed {
+.revealed {
   display: block;
-  animation: fadeIn 1.5s ease forwards;
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 h1 {
@@ -46,17 +46,12 @@ h2 {
   color: #0f0f0f;
   font-size: 1.2rem;
   letter-spacing: 0.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 1.2rem;
   animation: fadeIn 1.5s ease forwards;
 }
 
-button {
-  animation: fadeIn 3s ease forwards;
-}
-
-button.return {
-  margin-bottom: 15%;
-  animation: fadeIn 4s ease forwards;
+.animation {
+  animation: fadeIn 1.5s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -78,7 +73,7 @@ img {
   height: 60%;
   margin: 0 auto;
   cursor: pointer;
-  animation: fadeIn 4s ease forwards;
+  animation: fadeIn 2s ease forwards;
 }
 
 @media screen and (min-width: 768px) {

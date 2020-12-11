@@ -1,21 +1,32 @@
 const h1 = document.querySelector('h1');
 const h2 = document.querySelector('h2');
 const buttons = document.querySelectorAll('button');
+const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
 
+// Huge forEach-loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
+  //  Reveals buttons
+  setTimeout(() => {
+    button.classList.toggle('hidden');
+  }, 2500);
+  // Removes button animation class
+  setTimeout(() => {
+    button.classList.toggle('animation');
+  }, 4000);
   button.addEventListener('click', () => {
     if (button.className === 'accept') {
       h1.innerHTML = 'Awesome!';
       h2.innerHTML = 'You are being redirected...';
       setInterval(() => {
         window.location.replace('game.html');
-      }, 1500);
+      }, 2000);
     }
     if (button.className === 'decline') {
+      let countDown = 3;
       h1.style.color = 'white';
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
-      h2.innerHTML = 'Terminating window in 3 seconds.';
+      h2.innerHTML = `Terminating window in 3 seconds.`;
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
@@ -23,6 +34,9 @@ buttons.forEach((button) => {
       }, 3000);
     }
     if (button.className === 'party') {
+      setTimeout(() => {
+        partyHorn.play();
+      }, 800);
       h1.innerHTML = 'Party Mode Initiated!';
       h2.innerHTML = 'Scroll up and down to party.';
 
