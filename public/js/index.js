@@ -21,8 +21,8 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     if (button.className === 'accept') {
       h1.style.color = 'limegreen';
-      h1.innerHTML = 'Awesome!';
-      h2.innerHTML = 'You are being redirected...';
+      h1.textContent = 'Awesome!';
+      h2.textContent = 'You are being redirected...';
       acceptButton.classList.add('hidden');
       declineButton.classList.add('hidden');
       partyButton.classList.add('hidden');
@@ -34,10 +34,11 @@ buttons.forEach((button) => {
     if (button.className === 'decline') {
       h1.style.color = 'firebrick';
       h2.style.color = 'gainsboro';
-      h1.innerHTML = 'Rude!';
-      h2.innerHTML = 'Take a deep breath and reconsider.';
-      acceptButton.innerHTML = "Fine, I'll play.";
-      partyButton.innerHTML = 'I would still rather party';
+
+      h1.textContent = 'Rude!';
+      h2.textContent = 'Take a deep breath and reconsider.';
+      acceptButton.textContent = "Fine, I'll play.";
+      partyButton.textContent = 'I would still rather party';
       declineButton.classList.add('hidden');
 
       setTimeout(() => {
@@ -57,11 +58,11 @@ buttons.forEach((button) => {
         partyHorn.play();
       }, 800);
       h1.style.color = 'hotpink';
-      h1.innerHTML = 'Party Mode Activated!';
-      h2.innerHTML = 'Scroll up and down to party.';
+      h1.textContent = 'Party Mode Activated!';
+      h2.textContent = 'Scroll up and down to party.';
       acceptButton.classList.add('hidden');
       declineButton.classList.add('hidden');
-      partyButton.innerHTML = 'Partypooper Button';
+      partyButton.textContent = 'Partypooper Button';
 
       button.addEventListener('click', () => {
         window.location.replace('/index.html');
@@ -76,8 +77,8 @@ buttons.forEach((button) => {
           }
         });
       } else {
-        h1.innerHTML = 'Party Mode Activated!';
-        h2.innerHTML = 'Tap screen to party.';
+        h1.textContent = 'Party Mode Activated!';
+        h2.textContent = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {
           document.body.style.backgroundColor = 'firebrick';
         });
