@@ -35,6 +35,10 @@ buttons.forEach((button) => {
       }, 2000);
     }
     if (button.className === 'decline') {
+      setInterval(() => {
+        closeMe();
+      }, 3000);
+
       h1.style.color = 'red';
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
@@ -44,9 +48,6 @@ buttons.forEach((button) => {
       partyButton.classList.add('hidden');
 
       document.body.style.backgroundColor = 'black';
-      setInterval(() => {
-        closeMe();
-      }, 3000);
     }
     if (button.className === 'party') {
       setTimeout(() => {
