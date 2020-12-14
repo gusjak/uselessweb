@@ -6,7 +6,11 @@ const declineButton = document.getElementById('second');
 const partyButton = document.getElementById('third');
 const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
 
-const open = window.open('https://popcatclicker.netlify.app/');
+// Function to close browser window when declining game invitation.
+function closeMe() {
+  window.opener = self;
+  window.close();
+}
 
 // Huge loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
@@ -41,7 +45,7 @@ buttons.forEach((button) => {
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
-        window.open('', '_self').close();
+        closeMe();
       }, 3000);
     }
     if (button.className === 'party') {
