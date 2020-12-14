@@ -39,7 +39,7 @@ buttons.forEach((button) => {
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
-        window.close();
+        self.close();
       }, 3000);
     }
     if (button.className === 'party') {
