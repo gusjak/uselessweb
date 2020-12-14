@@ -5,6 +5,7 @@ const acceptButton = document.getElementById('first');
 const declineButton = document.getElementById('second');
 const partyButton = document.getElementById('third');
 const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
+const relaxMusic = new Audio('/public/sfx/relax.mp3');
 
 // Huge loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
@@ -32,22 +33,28 @@ buttons.forEach((button) => {
       h1.style.color = 'red';
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
-      h2.innerHTML = `Terminating window in 3 seconds.`;
-      acceptButton.classList.add('hidden');
+      h2.innerHTML = 'Take a deep breath and reconsider.';
+      acceptButton.innerHTML = "Fine, I'll play.";
+      partyButton.innerHTML = 'I would still rather party';
       declineButton.classList.add('hidden');
-      partyButton.classList.add('hidden');
 
-      document.body.style.backgroundColor = 'black';
-      setInterval(() => {
-        top.window.close();
-      }, 3000);
+      setTimeout(() => {
+        relaxMusic.play();
+      }, 1500);
+
+      acceptButton.addEventListener('click', () => {
+        relaxMusic.pause();
+      });
+      partyButton.addEventListener('click', () => {
+        relaxMusic.pause();
+      });
     }
     if (button.className === 'party') {
       setTimeout(() => {
         partyHorn.play();
       }, 800);
       h1.style.color = 'hotpink';
-      h1.innerHTML = 'Party Mode Initiated!';
+      h1.innerHTML = 'Party Mode Activated!';
       h2.innerHTML = 'Scroll up and down to party.';
       acceptButton.classList.add('hidden');
       declineButton.classList.add('hidden');
@@ -66,7 +73,7 @@ buttons.forEach((button) => {
           }
         });
       } else {
-        h1.innerHTML = 'Party Mode Initiated!';
+        h1.innerHTML = 'Party Mode Activated!';
         h2.innerHTML = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {
           document.body.style.backgroundColor = 'FireBrick';
