@@ -21,9 +21,9 @@ buttons.forEach((button) => {
       h1.style.color = 'green';
       h1.innerHTML = 'Awesome!';
       h2.innerHTML = 'You are being redirected...';
-      acceptButton.classList.add('hidden');
-      declineButton.classList.add('hidden');
-      partyButton.classList.add('hidden');
+      // acceptButton.classList.add('hidden');
+      // declineButton.classList.add('hidden');
+      // partyButton.classList.add('hidden');
       setInterval(() => {
         window.location.replace('game.html');
       }, 3000);
@@ -33,9 +33,9 @@ buttons.forEach((button) => {
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
       h2.innerHTML = `Terminating window in 3 seconds.`;
-      acceptButton.classList.add('hidden');
-      declineButton.classList.add('hidden');
-      partyButton.classList.add('hidden');
+      // acceptButton.classList.add('hidden');
+      // declineButton.classList.add('hidden');
+      // partyButton.classList.add('hidden');
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
