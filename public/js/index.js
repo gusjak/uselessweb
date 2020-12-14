@@ -39,7 +39,7 @@ buttons.forEach((button) => {
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
-        self.close();
+        window.close();
       }, 3000);
     }
     if (button.className === 'party') {
@@ -60,10 +60,8 @@ buttons.forEach((button) => {
       if (window.innerWidth > 414) {
         window.addEventListener('wheel', (event) => {
           if (event.deltaY < 0) {
-            console.log('scrolling up');
             document.body.style.backgroundColor = 'FireBrick';
           } else if (event.deltaY > 0) {
-            console.log('scrolling down');
             document.body.style.backgroundColor = 'RoyalBlue';
           }
         });
@@ -71,11 +69,9 @@ buttons.forEach((button) => {
         h1.innerHTML = 'Party Mode Initiated!';
         h2.innerHTML = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {
-          console.log('finger down');
           document.body.style.backgroundColor = 'FireBrick';
         });
         window.addEventListener('touchend', (event) => {
-          console.log('finger up');
           document.body.style.backgroundColor = 'RoyalBlue';
         });
       }
