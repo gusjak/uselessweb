@@ -13,13 +13,14 @@ buttons.forEach((button) => {
   setTimeout(() => {
     button.classList.toggle('hidden');
   }, 3500);
-  // Removes button animation class
+  // Removes button animation
   setTimeout(() => {
     button.classList.toggle('animation');
   }, 5000);
+  // Event if user clicks 'Heck yes!'
   button.addEventListener('click', () => {
     if (button.className === 'accept') {
-      h1.style.color = 'green';
+      h1.style.color = 'limegreen';
       h1.innerHTML = 'Awesome!';
       h2.innerHTML = 'You are being redirected...';
       acceptButton.classList.add('hidden');
@@ -29,9 +30,10 @@ buttons.forEach((button) => {
         window.location.replace('game.html');
       }, 3000);
     }
+    // Event if user clicks 'Nope'
     if (button.className === 'decline') {
-      h1.style.color = 'red';
-      h2.style.color = 'white';
+      h1.style.color = 'firebrick';
+      h2.style.color = 'gainsboro';
       h1.innerHTML = 'Rude!';
       h2.innerHTML = 'Take a deep breath and reconsider.';
       acceptButton.innerHTML = "Fine, I'll play.";
@@ -49,6 +51,7 @@ buttons.forEach((button) => {
         relaxMusic.pause();
       });
     }
+    // Event if user clicks 'I'd rather party...'
     if (button.className === 'party') {
       setTimeout(() => {
         partyHorn.play();
@@ -67,19 +70,19 @@ buttons.forEach((button) => {
       if (window.innerWidth > 414) {
         window.addEventListener('wheel', (event) => {
           if (event.deltaY < 0) {
-            document.body.style.backgroundColor = 'FireBrick';
+            document.body.style.backgroundColor = 'firebrick';
           } else if (event.deltaY > 0) {
-            document.body.style.backgroundColor = 'RoyalBlue';
+            document.body.style.backgroundColor = 'royalblue';
           }
         });
       } else {
         h1.innerHTML = 'Party Mode Activated!';
         h2.innerHTML = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {
-          document.body.style.backgroundColor = 'FireBrick';
+          document.body.style.backgroundColor = 'firebrick';
         });
         window.addEventListener('touchend', (event) => {
-          document.body.style.backgroundColor = 'RoyalBlue';
+          document.body.style.backgroundColor = 'royalblue';
         });
       }
     }

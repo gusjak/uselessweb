@@ -42,7 +42,7 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
-  margin-top: 0rem;
+  margin-top: 0;
   animation: fadeIn 1.5s ease forwards;
 }
 
@@ -70,8 +70,17 @@ button {
   animation: shaky 1.2s ease infinite;
 }
 
-button:hover {
-  color: cornflowerblue;
+button.accept:hover {
+  color: limegreen;
+}
+
+button.decline:hover {
+  color: firebrick;
+}
+
+button.party:hover,
+button.return:hover {
+  color: hotpink;
 }
 
 .animation {
