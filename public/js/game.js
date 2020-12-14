@@ -1,14 +1,13 @@
 // Page loader, will add a more nice effect to it later.
 const h1 = document.querySelector('h1');
 const h2 = document.querySelector('h2');
-const container = document.querySelector('.container');
+const gameContainer = document.querySelector('.game-container');
 
 window.addEventListener('load', () => {
   setTimeout(() => {
-    container.classList.remove('hidden');
-    container.classList.add('revealed');
-    h1.classList.add('hidden');
-    h2.classList.add('hidden');
+    gameContainer.classList.toggle('hidden');
+    h1.classList.toggle('hidden');
+    h2.classList.toggle('hidden');
   }, 3500);
 });
 
@@ -58,11 +57,17 @@ setTimeout(() => {
       'Come on!',
       'There you go!',
       'You pop, I pop!',
+      'Sweet!',
+      'But.. why?',
+      'This is not tiresom!',
+      "You've got all day, right?",
+      'Woooohooo!',
+      'Existential crisis much?',
     ];
 
     const randomEncouragement = encouragements[(Math.random() * encouragements.length) | 0];
 
     h2.classList.remove('hidden');
     h2.innerHTML = randomEncouragement;
-  }, 4000);
-}, 6000);
+  }, 3000);
+}, 4000);

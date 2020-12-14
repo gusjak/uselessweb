@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background: #0f0f0f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,20 +35,43 @@ body {
 }
 
 h1 {
-  text-transform: uppercase;
-  color: #0f0f0f;
   font-size: 3rem;
-  letter-spacing: 0.5rem;
+  margin-bottom: 0;
   animation: fadeIn 1.5s ease forwards;
 }
 
 h2 {
-  text-transform: uppercase;
-  color: #0f0f0f;
-  font-size: 1.2rem;
-  letter-spacing: 0.5rem;
-  padding-bottom: 1.2rem;
+  font-size: 1.4rem;
+  margin-top: 0rem;
   animation: fadeIn 1.5s ease forwards;
+}
+
+h1,
+h2,
+button {
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  animation: shaky 1.2s ease infinite;
+}
+
+button:hover {
+  color: cornflowerblue;
 }
 
 .animation {
@@ -64,13 +88,45 @@ h2 {
   }
 }
 
-audio {
-  display: none;
+@keyframes shaky {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -1px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 img {
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   margin: 0 auto;
   cursor: pointer;
   animation: fadeIn 2s ease forwards;

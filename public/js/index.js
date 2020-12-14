@@ -1,32 +1,41 @@
 const h1 = document.querySelector('h1');
 const h2 = document.querySelector('h2');
 const buttons = document.querySelectorAll('button');
+const acceptButton = document.getElementById('first');
+const declineButton = document.getElementById('second');
+const partyButton = document.getElementById('third');
 const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
 
-// Huge forEach-loop that will determine what happens depending on what button you click.
+// Huge loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
   //  Reveals buttons
   setTimeout(() => {
     button.classList.toggle('hidden');
-  }, 2500);
+  }, 3500);
   // Removes button animation class
   setTimeout(() => {
     button.classList.toggle('animation');
-  }, 4000);
+  }, 5000);
   button.addEventListener('click', () => {
     if (button.className === 'accept') {
+      h1.style.color = 'green';
       h1.innerHTML = 'Awesome!';
       h2.innerHTML = 'You are being redirected...';
+      acceptButton.classList.add('hidden');
+      declineButton.classList.add('hidden');
+      partyButton.classList.add('hidden');
       setInterval(() => {
         window.location.replace('game.html');
       }, 2000);
     }
     if (button.className === 'decline') {
-      let countDown = 3;
-      h1.style.color = 'white';
+      h1.style.color = 'red';
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
       h2.innerHTML = `Terminating window in 3 seconds.`;
+      acceptButton.classList.add('hidden');
+      declineButton.classList.add('hidden');
+      partyButton.classList.add('hidden');
 
       document.body.style.backgroundColor = 'black';
       setInterval(() => {
@@ -37,17 +46,25 @@ buttons.forEach((button) => {
       setTimeout(() => {
         partyHorn.play();
       }, 800);
+      h1.style.color = 'hotpink';
       h1.innerHTML = 'Party Mode Initiated!';
       h2.innerHTML = 'Scroll up and down to party.';
+      acceptButton.classList.add('hidden');
+      declineButton.classList.add('hidden');
+      partyButton.innerHTML = 'Partypooper Button';
+
+      partyButton.addEventListener('click', () => {
+        window.location.replace('index.html');
+      });
 
       if (window.innerWidth > 414) {
         window.addEventListener('wheel', (event) => {
           if (event.deltaY < 0) {
             console.log('scrolling up');
-            document.body.style.backgroundColor = 'red';
+            document.body.style.backgroundColor = 'FireBrick';
           } else if (event.deltaY > 0) {
             console.log('scrolling down');
-            document.body.style.backgroundColor = 'blue';
+            document.body.style.backgroundColor = 'RoyalBlue';
           }
         });
       } else {
@@ -55,11 +72,11 @@ buttons.forEach((button) => {
         h2.innerHTML = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {
           console.log('finger down');
-          document.body.style.backgroundColor = 'red';
+          document.body.style.backgroundColor = 'FireBrick';
         });
         window.addEventListener('touchend', (event) => {
           console.log('finger up');
-          document.body.style.backgroundColor = 'blue';
+          document.body.style.backgroundColor = 'RoyalBlue';
         });
       }
     }
