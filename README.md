@@ -23,7 +23,7 @@ $ git clone https://github.com/gusjak/uselessweb.git
 **OR**
 
 Visit:
-[Website coming soon...](https://github.com/gusjak/uselessweb)
+https://popcatclicker.netlify.app/
 
 <br>
 
