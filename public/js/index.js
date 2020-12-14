@@ -6,12 +6,6 @@ const declineButton = document.getElementById('second');
 const partyButton = document.getElementById('third');
 const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
 
-// Function to close browser window when declining game invitation.
-function closeMe() {
-  window.opener = self;
-  window.close();
-}
-
 // Huge loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
   //  Reveals buttons
@@ -32,13 +26,9 @@ buttons.forEach((button) => {
       partyButton.classList.add('hidden');
       setInterval(() => {
         window.location.replace('game.html');
-      }, 2000);
+      }, 3000);
     }
     if (button.className === 'decline') {
-      setInterval(() => {
-        closeMe();
-      }, 3000);
-
       h1.style.color = 'red';
       h2.style.color = 'white';
       h1.innerHTML = 'Rude!';
@@ -48,6 +38,9 @@ buttons.forEach((button) => {
       partyButton.classList.add('hidden');
 
       document.body.style.backgroundColor = 'black';
+      setInterval(() => {
+        self.close();
+      }, 3000);
     }
     if (button.className === 'party') {
       setTimeout(() => {
@@ -56,13 +49,13 @@ buttons.forEach((button) => {
       h1.style.color = 'hotpink';
       h1.innerHTML = 'Party Mode Initiated!';
       h2.innerHTML = 'Scroll up and down to party.';
-      acceptButton.classList.add('hidden');
-      declineButton.classList.add('hidden');
-      partyButton.innerHTML = 'Partypooper Button';
+      // acceptButton.classList.add('hidden');
+      // declineButton.classList.add('hidden');
+      // partyButton.innerHTML = 'Partypooper Button';
 
-      partyButton.addEventListener('click', () => {
-        window.location.replace('index.html');
-      });
+      // button.addEventListener('click', () => {
+      //   window.location.replace('/index.html');
+      // });
 
       if (window.innerWidth > 414) {
         window.addEventListener('wheel', (event) => {
