@@ -29,8 +29,8 @@ https://popcatclicker.netlify.app/
 
 ## Testers
 
-- Tester 1
-- Tester 2
+- [Hugo Sundberg](https://github.com/Hugocsundberg)
+- [Jonathan Larsson](https://github.com/Icarium2)
 
 <br>
 
