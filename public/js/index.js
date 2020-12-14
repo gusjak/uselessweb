@@ -5,7 +5,7 @@ const acceptButton = document.getElementById('first');
 const declineButton = document.getElementById('second');
 const partyButton = document.getElementById('third');
 const partyHorn = new Audio('/public/sfx/partyhorn.mp3');
-const relaxMusic = new Audio('/public/sfx/relax.mp3');
+const relaxMusic = new Audio('/public/sfx/relax.m4a');
 
 // Huge loop that will determine what happens depending on what button you click.
 buttons.forEach((button) => {
