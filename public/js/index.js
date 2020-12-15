@@ -1,3 +1,4 @@
+// Store all the variables
 const h1 = document.querySelector('h1');
 const h2 = document.querySelector('h2');
 const buttons = document.querySelectorAll('button');
@@ -67,7 +68,7 @@ buttons.forEach((button) => {
       button.addEventListener('click', () => {
         window.location.replace('/index.html');
       });
-
+      // Desktop 'Party Event-listener'
       if (window.innerWidth > 414) {
         window.addEventListener('wheel', (event) => {
           if (event.deltaY < 0) {
@@ -76,7 +77,9 @@ buttons.forEach((button) => {
             document.body.style.backgroundColor = 'royalblue';
           }
         });
-      } else {
+      }
+      // Mobile 'Party Event-listener
+      else {
         h1.textContent = 'Party Mode Activated!';
         h2.textContent = 'Tap screen to party.';
         window.addEventListener('touchstart', (event) => {

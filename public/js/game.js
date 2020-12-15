@@ -36,7 +36,6 @@ let counter = document.querySelector('.imgBtn'),
 counter.addEventListener('click', () => {
   count += 1;
   clickCounter.innerHTML = count;
-  console.log(count);
 });
 
 // Button to return to "Title Screen".
@@ -45,7 +44,7 @@ const returnButton = document.querySelector('.return');
 returnButton.addEventListener('click', () => {
   window.location.replace('index.html');
 });
-
+// Cat gives you encouraging comments after a few seconds.
 setTimeout(() => {
   setInterval(() => {
     const encouragements = [
@@ -65,6 +64,7 @@ setTimeout(() => {
       'Existential crisis much?',
     ];
 
+    // Randomize the encouraging comments.
     const randomEncouragement = encouragements[(Math.random() * encouragements.length) | 0];
 
     h2.classList.remove('hidden');
